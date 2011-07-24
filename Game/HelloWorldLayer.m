@@ -35,27 +35,45 @@
 	if( (self=[super init])) {
         CGSize winSize = [[CCDirector sharedDirector] winSize];
 
+        voronoiDrawer  = [[VoronoiDrawer alloc] init];
+
+        
         
         target = [[CCRenderTexture renderTextureWithWidth:winSize.width height:winSize.height] retain];
         [target setPosition:ccp(winSize.width/2, winSize.height/2)];
-        [self addChild:target z:1];
+        [self addChild:target z:-1];
         
 		
+        [CCMenuItemFont setFontSize:20];
+		CCMenuItem *item1 = [CCMenuItemFont itemFromString:@"Voronoi!" target:self selector:@selector(drawTexture:)];
+		CCMenuItem *item2 = [CCMenuItemFont itemFromString:@"No More Voronoi!" target:self selector:@selector(clearImage:)];
+		CCMenu *menu = [CCMenu menuWithItems:item1, item2, nil];
+		[self addChild:menu];
+		[menu alignItemsVertically];
+		[menu setPosition:ccp(winSize.width-80, winSize.height-30)];
+        
 				
 	    self.isTouchEnabled = YES;
 
     }
 	return self;
+
 }
 
 
--(void) draw{
-     
-    //[target begin];
-    
-    [voronoiDrawer drawVoronoi:nil];    
+-(void) clearImage:(id)sender
+{
+    [target clear:0 g:0 b:0 a:255];
+}
 
-   // [target end];
+
+
+-(void) drawTexture: (id)sender{
+    [target clear:0 g:0 b:0 a:255];
+
+    [target begin];
+    [voronoiDrawer drawVoronoi:nil];
+    [target end];
 
 }
 
@@ -65,7 +83,7 @@
 	// in case you have something to dealloc, do it in this method
 	// in this particular example nothing needs to be released.
 	// cocos2d will automatically release all the children (Label)
-
+        [voronoiDrawer release];
     [target release];
     [[CCTextureCache sharedTextureCache] removeUnusedTextures];
     

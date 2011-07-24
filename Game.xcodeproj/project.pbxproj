@@ -171,8 +171,8 @@
 		DA70CDD213DBA55B003935C3 /* NSMutableArray+Delaunay.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSMutableArray+Delaunay.m"; sourceTree = "<group>"; };
 		DA70CDD313DBA55B003935C3 /* Delaunay-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Delaunay-Prefix.pch"; sourceTree = "<group>"; };
 		DA70CDD413DBA55B003935C3 /* Delaunay.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Delaunay.h; sourceTree = "<group>"; };
-		DA70CDD513DBA55B003935C3 /* VoronoiDrawer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VoronoiDrawer.h; path = Game/VoronoiDrawer.h; sourceTree = "<group>"; };
-		DA70CDD613DBA55B003935C3 /* VoronoiDrawer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = VoronoiDrawer.m; path = Game/VoronoiDrawer.m; sourceTree = "<group>"; };
+		DA70CDD513DBA55B003935C3 /* VoronoiDrawer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VoronoiDrawer.h; sourceTree = "<group>"; };
+		DA70CDD613DBA55B003935C3 /* VoronoiDrawer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VoronoiDrawer.m; sourceTree = "<group>"; };
 		DAC10D0313DBA2CF00EB21A8 /* Game.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Game.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DAC10D0713DBA2CF00EB21A8 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		DAC10D0913DBA2CF00EB21A8 /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
@@ -436,8 +436,7 @@
 				DA70CDD313DBA55B003935C3 /* Delaunay-Prefix.pch */,
 				DA70CDD413DBA55B003935C3 /* Delaunay.h */,
 			);
-			name = Delaunay;
-			path = Game/Delaunay;
+			path = Delaunay;
 			sourceTree = "<group>";
 		};
 		DA70CDB513DBA55B003935C3 /* Classes */ = {
@@ -479,9 +478,6 @@
 		DAC10CF813DBA2CE00EB21A8 = {
 			isa = PBXGroup;
 			children = (
-				DA70CDB413DBA55B003935C3 /* Delaunay */,
-				DA70CDD513DBA55B003935C3 /* VoronoiDrawer.h */,
-				DA70CDD613DBA55B003935C3 /* VoronoiDrawer.m */,
 				DAC10D1713DBA2CF00EB21A8 /* Game */,
 				DAC10D0613DBA2CF00EB21A8 /* Frameworks */,
 				DAC10D0413DBA2CF00EB21A8 /* Products */,
@@ -514,6 +510,9 @@
 		DAC10D1713DBA2CF00EB21A8 /* Game */ = {
 			isa = PBXGroup;
 			children = (
+				DA70CDB413DBA55B003935C3 /* Delaunay */,
+				DA70CDD513DBA55B003935C3 /* VoronoiDrawer.h */,
+				DA70CDD613DBA55B003935C3 /* VoronoiDrawer.m */,
 				DAC10E6913DBA2D100EB21A8 /* AppDelegate.h */,
 				DAC10E6A13DBA2D100EB21A8 /* AppDelegate.m */,
 				DAC10E6C13DBA2D100EB21A8 /* RootViewController.h */,
