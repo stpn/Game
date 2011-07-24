@@ -20,11 +20,6 @@
 {
     VoronoiDrawer* voronoiDrawer;
     
-    
-    DelaunayVoronoi *voronoi;
-    NSMutableArray *points;
-    CGRect plotBounds;
-    
     CCRenderTexture* target;
 
 
