@@ -84,7 +84,9 @@ void ccDrawQuadBezier(CGPoint origin, CGPoint control, CGPoint destination, NSUI
  @since v0.8
  */
 void ccDrawCubicBezier(CGPoint origin, CGPoint control1, CGPoint control2, CGPoint destination, NSUInteger segments);
-
+    
+void ccFillPoly( CGPoint *poli, int points, BOOL closePolygon );
+   
 #ifdef __cplusplus
 }
 #endif

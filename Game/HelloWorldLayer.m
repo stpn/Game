@@ -31,23 +31,32 @@
 // on "init" you need to initialize your instance
 -(id) init
 {
-	// always call "super" init
-	// Apple recommends to re-assign "self" with the "super" return value
-	if( (self=[super init])) {
-		
-		// create and initialize a Label
-		CCLabelTTF *label = [CCLabelTTF labelWithString:@"Hello World" fontName:@"Marker Felt" fontSize:64];
-
-		// ask director the the window size
-		CGSize size = [[CCDirector sharedDirector] winSize];
 	
-		// position the label on the center of the screen
-		label.position =  ccp( size.width /2 , size.height/2 );
+	if( (self=[super init])) {
+        CGSize winSize = [[CCDirector sharedDirector] winSize];
+
+        
+        target = [[CCRenderTexture renderTextureWithWidth:winSize.width height:winSize.height] retain];
+        [target setPosition:ccp(winSize.width/2, winSize.height/2)];
+        [self addChild:target z:1];
+        
 		
-		// add the label as a child to this Layer
-		[self addChild: label];
-	}
+				
+	    self.isTouchEnabled = YES;
+
+    }
 	return self;
+}
+
+
+-(void) draw{
+     
+    //[target begin];
+    
+    [voronoiDrawer drawVoronoi:nil];    
+
+   // [target end];
+
 }
 
 // on "dealloc" you need to release all your retained objects
@@ -56,7 +65,14 @@
 	// in case you have something to dealloc, do it in this method
 	// in this particular example nothing needs to be released.
 	// cocos2d will automatically release all the children (Label)
-	
+
+    [target release];
+    [[CCTextureCache sharedTextureCache] removeUnusedTextures];
+    
+    
+
+
+
 	// don't forget to call "super dealloc"
 	[super dealloc];
 }

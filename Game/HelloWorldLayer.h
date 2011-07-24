@@ -9,10 +9,25 @@
 
 // When you import this file, you import all the cocos2d classes
 #import "cocos2d.h"
+#import "VoronoiDrawer.h"
+#import "DelaunayVoronoi.h"
+#import "DelaunaySite.h"
+#import "DelaunayPolygon.h"
+
 
 // HelloWorldLayer
 @interface HelloWorldLayer : CCLayer
 {
+    VoronoiDrawer* voronoiDrawer;
+    
+    
+    DelaunayVoronoi *voronoi;
+    NSMutableArray *points;
+    CGRect plotBounds;
+    
+    CCRenderTexture* target;
+
+
 }
 
 // returns a CCScene that contains the HelloWorldLayer as the only child
